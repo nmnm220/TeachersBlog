@@ -1,0 +1,57 @@
+* {
+    font-family: 'Anek Devanagari', sans-serif;
+}
+.main {
+    background-color: white;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.content {
+    min-height: 100%;
+    margin-top: 90px;
+}
+.header {
+    background-color: darkslategray;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    padding: 0;
+    height: 80px;
+}
+.nav {
+    text-align: center;
+    padding: 20px 0 0;
+    margin: 0;
+}
+.nav-item {
+    user-select: none;
+    outline: none;
+    text-align: center;
+    display: inline;
+    margin: 20px;
+}
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    text-align-all: center;
+}
+.nav-item :hover{
+    color: darkgray;
+}
+.nav-item :active {
+    color: grey;
+}
+.footer {
+    background-color: darkslategray;
+    left: 0;
+    right: 0;
+    width: 100%;
+    position: absolute;
+    padding: 0;
+    height: 80px;
+}
