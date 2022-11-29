@@ -1,44 +1,61 @@
 * {
     font-family: 'Anek Devanagari', sans-serif;
+
 }
-.main {
+/**::-webkit-scrollbar{
+    width: 0;
+}*/
+:root {
+    --header-height: 80px;
+    --content-top-margin: 90px;
+    --basic-color: #2AABE4;
+    --color2: #FFCD24;
+    --color3: #9DC8E4;
+}
+
+html{
+    overflow-y: scroll;
+}
+.header {
+    display: block;
+    background-color: var(--basic-color);
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: fixed;
+    padding: 0;
+    height: var(--header-height);
+    box-shadow: 0 0 20px #494949;
+}
+.content {
     background-color: white;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: var(--content-top-margin);
+    height: 100%;
+    min-height: calc(100vh - (var(--content-top-margin) + var(--header-height)));
 }
-.content {
-    min-height: 100%;
-    margin-top: 90px;
-}
-.header {
-    background-color: darkslategray;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    position: fixed;
-    padding: 0;
-    height: 80px;
-}
+
 .nav {
-    text-align: center;
-    padding: 20px 0 0;
+    position: relative;
+    top: 25%;
+    left: 25%;
+    padding: 0;
+    width: 50%;
     margin: 0;
 }
 .nav-item {
     user-select: none;
     outline: none;
-    text-align: center;
+    text-align-all: center;
     display: inline;
     margin: 20px;
 }
 .nav-link {
     text-decoration: none;
     color: white;
-    font-size: 24px;
-    text-align-all: center;
+    font-size: 20px;
 }
 .nav-item :hover{
     color: darkgray;
@@ -47,11 +64,12 @@
     color: grey;
 }
 .footer {
-    background-color: darkslategray;
+    display: block;
+    background-color: var(--basic-color);
     left: 0;
-    right: 0;
     width: 100%;
     position: absolute;
     padding: 0;
-    height: 80px;
+    height: var(--header-height);
+    box-shadow: 0 0 10px #494949;
 }

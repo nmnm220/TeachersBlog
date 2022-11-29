@@ -10,7 +10,8 @@ public class IndexController {
     @GetMapping("/index")
     public String index(Model model) {
         model.addAttribute("title", "Педагогический блог");
-        return "index";
+        model.addAttribute("page", "index");
+        return "main_template";
     }
 
 }
