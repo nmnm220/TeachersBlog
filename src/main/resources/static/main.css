@@ -7,17 +7,17 @@
 }*/
 :root {
     --header-height: 80px;
-    --content-top-margin: 90px;
+    --content-top-margin: 100px;
     --basic-color: #2AABE4;
     --color2: #FFCD24;
     --color3: #9DC8E4;
 }
 
-html{
+html {
     overflow-y: scroll;
 }
 .header {
-    display: block;
+    display: flex;
     background-color: var(--basic-color);
     top: 0;
     left: 0;
@@ -27,23 +27,32 @@ html{
     height: var(--header-height);
     box-shadow: 0 0 20px #494949;
 }
+
 .content {
+    margin-top: var(--content-top-margin);
     background-color: white;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: var(--content-top-margin);
-    height: 100%;
-    min-height: calc(100vh - (var(--content-top-margin) + var(--header-height)));
+    min-height: calc(100vh - (var(--content-top-margin) + 2 * var(--header-height)) + 30px);
+    margin-bottom: 50px;
+    /*min-height: calc(100vh - (2 * var(--content-top-margin) + var(--header-height)));*/
 }
 
+.logo {
+    margin: auto 0 auto 30px;
+    padding: 0;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
 .nav {
-    position: relative;
-    top: 25%;
-    left: 25%;
     padding: 0;
     width: 50%;
-    margin: 0;
+    margin: auto;
 }
 .nav-item {
     user-select: none;
@@ -64,12 +73,31 @@ html{
     color: grey;
 }
 .footer {
-    display: block;
     background-color: var(--basic-color);
-    left: 0;
     width: 100%;
     position: absolute;
+    left: 0;
     padding: 0;
     height: var(--header-height);
     box-shadow: 0 0 10px #494949;
+    display: block;
+}
+.footer-content {
+    display: flex;
+    width: 50%;
+    margin: auto;
+    height: 100%;
+}
+.footer-social {
+    margin: auto 0 auto auto;
+}
+.footer-social img {
+    height: 30px;
+    width: 30px;
+}
+.footer-info {
+    margin: auto auto auto 0;
+}
+.footer a img {
+    margin: 0;
 }

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:fragment="head">
+  <meta charset="UTF-8">
+  <title th:text="${title}"/>
+  <link th:href="@{/main.css}" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari&display=swap" rel="stylesheet">
+</head>
+<body class = "flex-container">
+
+<div class = "flex-box">
+  <header th:fragment="header" class="header">
+    <div class="logo">
+      <a href="/index"> Педагогический блог Татьяны Москаленко</a>
+    </div>
+    HEADER
+  </header>
+</div>
+<div class = "flex-box">
+  CONTENT
+</div>
+<div class = "flex-box">
+  FOOTER
+</div>
+
+</body>
+</html>
