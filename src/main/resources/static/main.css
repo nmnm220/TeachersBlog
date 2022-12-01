@@ -8,7 +8,7 @@
 :root {
     --header-height: 80px;
     --content-top-margin: 100px;
-    --basic-color: #2AABE4;
+    --basic-color: white;
     --color2: #FFCD24;
     --color3: #9DC8E4;
 }
@@ -25,17 +25,15 @@ html {
     position: fixed;
     padding: 0;
     height: var(--header-height);
-    box-shadow: 0 0 20px #494949;
+    box-shadow: 0 0 10px #494949;
+    border-bottom: solid 1px var(--color3);
 }
 
 .content {
-    margin-top: var(--content-top-margin);
     background-color: white;
     width: 50%;
-    margin-left: auto;
-    margin-right: auto;
     min-height: calc(100vh - (var(--content-top-margin) + 2 * var(--header-height)) + 30px);
-    margin-bottom: 50px;
+    margin: var(--content-top-margin) auto 50px;
     /*min-height: calc(100vh - (2 * var(--content-top-margin) + var(--header-height)));*/
 }
 
@@ -63,14 +61,14 @@ a {
 }
 .nav-link {
     text-decoration: none;
-    color: white;
+    color: darkgray;
     font-size: 20px;
 }
-.nav-item :hover{
-    color: darkgray;
+.nav-item :hover {
+    color: grey;
 }
 .nav-item :active {
-    color: grey;
+    color: black;
 }
 .footer {
     background-color: var(--basic-color);

@@ -12,5 +12,4 @@ public class TestController {
         model.addAttribute("title", "TEST");
         return "test";
     }
-
 }
