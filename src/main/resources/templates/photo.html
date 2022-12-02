@@ -2,8 +2,8 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="ru">
 <head th:insert="~{fragments/template :: head}">
 </head>
-<div th:insert="~{fragments/template :: header}"></div>
-<body class="main">
+<body>
+<th:block th:insert="~{fragments/template :: header}" class="sticky"> </th:block>
 <div class="content">
     Первое поселение на территории нынешнего Всеволожска, раскинувшегося в долине реки Лубьи, было упомянуто ещё в
     Писцовой книге Водской пятины 1500 года — это деревня «Лубляна на речке Лубне»[9][10].
@@ -65,6 +65,6 @@
     город областного подчинения Всеволожск. Одновременно город Всеволожск был выделен из состава района и передан в
     подчинение Промышленного Облисполкома[37].
 </div>
-<div th:insert="~{fragments/template :: footer}" class="footer"></div>
+<th:block th:insert="~{fragments/template :: footer}" class="footer"></th:block>
 </body>
 </html>

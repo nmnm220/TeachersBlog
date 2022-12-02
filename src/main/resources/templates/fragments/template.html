@@ -6,10 +6,14 @@
     <link th:href="@{/style_grid.css}" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
 </head>
 <body>
 <header th:fragment="header" class="header">
+    <div class="logo">Педагогический блог
+    <p>Татьяны Москаленко</p></div>
     <ul class="nav">
         <li class="nav-item"><a href="/index" class="nav-link">Блог</a></li>
         <li class="nav-item"><a href="/news" class="nav-link">Новости</a></li>
@@ -18,13 +22,11 @@
         <li class="nav-item"><a href="/contacts" class="nav-link">Контакты</a></li>
     </ul>
 </header>
-<footer th:fragment="footer">
-    <div class="footer-content">
+<footer th:fragment="footer" class="footer">
         <span class="footer-info">© 2022</span>
         <div class="footer-social">
-            <a href="https://vk.com/id34256761"><img th:src="@{VK_compact_Logo.png}" alt="VK"></a>
+            <a href="https://vk.com/id34256761"><img th:src="@{VK_BW_Compact_Logo.png}" alt="VK"></a>
         </div>
-    </div>
 </footer>
 </body>
 </html>
