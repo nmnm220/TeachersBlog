@@ -48,7 +48,7 @@ body {
 .logo p {
     margin: 0;
     font-size: 24px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poiret One', cursive;
 }
 .nav {
     visibility: visible;
@@ -68,8 +68,8 @@ body {
 .nav-link {
     text-decoration: none;
     color: darkgray;
-    font-size: 36px;
-    font-family: 'Amatic SC', cursive;
+    font-size: 24px;
+    font-family: 'Poiret One', cursive;
 }
 .nav-item :hover {
     color: grey;
