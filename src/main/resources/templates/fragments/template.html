@@ -6,27 +6,50 @@
     <link th:href="@{/style_grid.css}" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari&family=Open+Sans&display=swap"
+          rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
 </head>
 <body>
+<div th:fragment="nav">
+<input type="checkbox" id="nav-toggle" hidden="">
+<nav class="nav-panel">
+    <ul>
+        <li><a href="#1">Один</a>
+        </li>
+        <li><a href="#2">Два</a>
+        </li>
+        <li><a href="#3">Три</a>
+        </li>
+        <li><a href="#4">Четыре</a>
+        </li>
+        <li><a href="#5">Пять</a>
+        </li>
+        <li><a href="#6">Шесть</a>
+        </li>
+        <li><a href="#7">Семь</a>
+        </li>
+    </ul>
+</nav>
+</div>
 <header th:fragment="header" class="header">
-    <div class="logo">Педагогический блог
-    <p>Татьяны Москаленко</p></div>
+    <div class="logo"><a href="/index">Педагогический блог
+        <p>Татьяны Москаленко</p></a></div>
     <ul class="nav">
-        <li class="nav-item"><a href="/index" class="nav-link">Блог</a></li>
         <li class="nav-item"><a href="/news" class="nav-link">Новости</a></li>
         <li class="nav-item"><a href="/photo" class="nav-link">Фото</a></li>
         <li class="nav-item"><a href="/videos" class="nav-link">Видео</a></li>
         <li class="nav-item"><a href="/contacts" class="nav-link">Контакты</a></li>
+
     </ul>
+    <label for="nav-toggle" class="nav-toggle" onclick=""></label>
 </header>
 <footer th:fragment="footer" class="footer">
-        <span class="footer-info">© 2022</span>
-        <div class="footer-social">
-            <a href="https://vk.com/id34256761"><img th:src="@{VK_BW_Compact_Logo.png}" alt="VK"></a>
-        </div>
+    <span class="footer-info">© 2022</span>
+    <div class="footer-social">
+        <a href="https://vk.com/id34256761"><img th:src="@{VK_BW_Compact_Logo.png}" alt="VK"></a>
+    </div>
 </footer>
 </body>
 </html>

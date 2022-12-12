@@ -41,9 +41,15 @@ body {
     align-items: center;
 }
 .logo {
+
     font-family: 'Poiret One', cursive;
     font-size: 32px;
     justify-self: center;
+    white-space: nowrap;
+}
+.logo a {
+    color: grey;
+    text-decoration: none;
 }
 .logo p {
     margin: 0;
@@ -77,6 +83,84 @@ body {
 .nav-item :active {
     color: black;
 }
+.nav-panel {
+    width: 320px;
+    min-width: 320px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    /* сдвигаем (прячем) панель относительно левого края страницы */
+    right: -360px;
+    /* внутренние отступы */
+    padding: 15px 20px;
+    /* плавный переход смещения панели */
+    transition: right 0.3s;
+    /* определяем цвет фона панели */
+    background: #16a085;
+    /* поверх других элементов */
+    z-index: 2000;
+}
+.nav-toggle {
+    /*
+    right: 320px;
+
+    top: 1em;
+
+    padding: 0.5em;
+     */
+    /* определяем цвет фона переключателя
+     * чаще вчего в соответствии с цветом фона панели
+    */
+    margin: 10px;
+    background: inherit;
+    color: #dadada;
+    cursor: pointer;
+    font-size: 1.2em;
+    line-height: 1;
+    z-index: 2001;
+    transition: color .25s ease-in-out;
+}
+.nav-toggle:after {
+    content: '\2630';
+    text-decoration: none;
+}
+[id='nav-toggle'] {
+    position: absolute;
+    display: none;
+}
+[id='nav-toggle']:checked ~ .nav-panel > .nav-toggle {
+    left: auto;
+    right: 2px;
+    top: 1em;
+}
+[id='nav-toggle']:checked ~ .nav-panel {
+    right: 0;
+    box-shadow:4px 0px 20px 0px rgba(0,0,0, 0.5);
+    overflow-y: auto;
+}
+[id='nav-toggle']:checked ~ .nav-panel > .nav-toggle:after {
+    content: '\2715';
+}
+.nav-panel > ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-panel > ul > li {
+    line-height: 2.5;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: opacity .5s .1s, transform .5s .1s;
+}
+
+[id='nav-toggle']:checked ~ .nav > ul > li {
+    opacity: 1;
+    transform: translateX(-50%);
+}
 .content {
     background-color: white;
     min-height: calc(100vh - 2 * var(--header-height));
@@ -86,7 +170,6 @@ body {
     grid-row-end: 3;
     grid-area: content;
 }
-
 .footer {
     background-color: whitesmoke;
     padding: 0;
@@ -120,6 +203,22 @@ body {
         "header header"
         "content content"
         "footer footer";
+    }
+    .header {
+        grid-template-columns: auto auto;
+    }
+    .logo {
+        display: inline;
+        grid-column: 1;
+    }
+    .nav {
+        visibility: hidden;
+        display: none;
+    }
+    .nav-toggle {
+        display: inline;
+        grid-column: 2;
+        justify-self: end;
     }
     .footer {
         grid-template-columns: auto auto;
