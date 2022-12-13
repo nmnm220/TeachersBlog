@@ -12,27 +12,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
 </head>
 <body>
-<div th:fragment="nav">
-<input type="checkbox" id="nav-toggle" hidden="">
-<nav class="nav-panel">
+<input th:fragment="nav-checkbox" type="checkbox" id="nav-toggle" hidden="">
+<nav th:fragment="nav" class="nav-panel">
     <ul>
-        <li><a href="#1">Один</a>
+        <li><label for="nav-toggle" class="nav-toggle" onclick=""></label>
         </li>
-        <li><a href="#2">Два</a>
+        <li><a href="/news">Новости</a>
         </li>
-        <li><a href="#3">Три</a>
+        <li><a href="/photo">Фото</a>
         </li>
-        <li><a href="#4">Четыре</a>
+        <li><a href="/videos">Видео</a>
         </li>
-        <li><a href="#5">Пять</a>
-        </li>
-        <li><a href="#6">Шесть</a>
-        </li>
-        <li><a href="#7">Семь</a>
+        <li><a href="/contacts">Контакты</a>
         </li>
     </ul>
 </nav>
-</div>
 <header th:fragment="header" class="header">
     <div class="logo"><a href="/index">Педагогический блог
         <p>Татьяны Москаленко</p></a></div>

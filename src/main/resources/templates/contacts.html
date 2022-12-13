@@ -2,11 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="ru">
 <head th:insert="~{fragments/template :: head}">
 </head>
-<div th:insert="~{fragments/template :: header}"></div>
-<body class="main">
+<body>
+<th:block th:insert="~{fragments/template :: nav-checkbox}"></th:block>
+<th:block th:insert="~{fragments/template :: nav}"></th:block>
+<th:block th:insert="~{fragments/template :: header}"></th:block>
 <div class="content">
-    123
+    12313456789087654320000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 </div>
-<div th:insert="~{fragments/template :: footer}" class="footer"></div>
+<th:block th:insert="~{fragments/template :: footer}" class="footer"></th:block>
 </body>
 </html>

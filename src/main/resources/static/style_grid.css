@@ -5,6 +5,7 @@
 
 html {
     overflow-y: scroll;
+    overflow-x:hidden;
 }
 
 :root {
@@ -21,7 +22,7 @@ body {
     "header header header"
     ". content ."
     "footer footer footer";
-    grid-template-columns: auto 50% auto;
+
     margin: 0;
 }
 .header {
@@ -41,7 +42,7 @@ body {
     align-items: center;
 }
 .logo {
-
+    margin-left: 20px;
     font-family: 'Poiret One', cursive;
     font-size: 32px;
     justify-self: center;
@@ -75,10 +76,12 @@ body {
     text-decoration: none;
     color: darkgray;
     font-size: 24px;
+    transition: 500ms;
     font-family: 'Poiret One', cursive;
 }
 .nav-item :hover {
     color: grey;
+    transform: scale(1.2);
 }
 .nav-item :active {
     color: black;
@@ -91,28 +94,14 @@ body {
     top: 0;
     bottom: 0;
     margin: 0;
-    /* сдвигаем (прячем) панель относительно левого края страницы */
+    padding: 0;
     right: -360px;
-    /* внутренние отступы */
-    padding: 15px 20px;
-    /* плавный переход смещения панели */
     transition: right 0.3s;
-    /* определяем цвет фона панели */
-    background: #16a085;
-    /* поверх других элементов */
+    background: gray;
     z-index: 2000;
 }
 .nav-toggle {
-    /*
-    right: 320px;
-
-    top: 1em;
-
-    padding: 0.5em;
-     */
-    /* определяем цвет фона переключателя
-     * чаще вчего в соответствии с цветом фона панели
-    */
+    display: none;
     margin: 10px;
     background: inherit;
     color: #dadada;
@@ -126,49 +115,41 @@ body {
     content: '\2630';
     text-decoration: none;
 }
+.nav-panel ul {
+    list-style: none;
+    padding: 0;
+}
+.nav-panel ul li a {
+    margin-left: 50px;
+    font-size: 24px;
+    color: whitesmoke;
+    font-family: 'Poiret One', cursive;
+    text-decoration: none;
+}
+.nav-checkbox {
+    position: absolute;
+    display: none;
+}
 [id='nav-toggle'] {
     position: absolute;
     display: none;
 }
-[id='nav-toggle']:checked ~ .nav-panel > .nav-toggle {
-    left: auto;
-    right: 2px;
-    top: 1em;
-}
 [id='nav-toggle']:checked ~ .nav-panel {
     right: 0;
-    box-shadow:4px 0px 20px 0px rgba(0,0,0, 0.5);
+    box-shadow:4px 0 20px 0 rgba(0,0,0, 0.5);
     overflow-y: auto;
 }
-[id='nav-toggle']:checked ~ .nav-panel > .nav-toggle:after {
+[id='nav-toggle']:checked ~ .nav-toggle:after {
     content: '\2715';
 }
-.nav-panel > ul {
-    display: block;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
 
-.nav-panel > ul > li {
-    line-height: 2.5;
-    opacity: 0;
-    transform: translateX(-50%);
-    transition: opacity .5s .1s, transform .5s .1s;
-}
-
-[id='nav-toggle']:checked ~ .nav > ul > li {
-    opacity: 1;
-    transform: translateX(-50%);
-}
 .content {
     background-color: white;
-    min-height: calc(100vh - 2 * var(--header-height));
+    min-height: calc(105vh - 2 * var(--header-height));
     margin: 10px auto 10px;
-    grid-column: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
     grid-area: content;
+    word-wrap: break-word;
+    max-width: 100vh;
 }
 .footer {
     background-color: whitesmoke;
@@ -197,7 +178,7 @@ body {
     align-self: center;
 }
 
-@media (max-width: 900px){
+@media (max-width: 1100px){
     body {
         grid-template-areas:
         "header header"
@@ -211,12 +192,16 @@ body {
         display: inline;
         grid-column: 1;
     }
+    .logo p {
+        display: inline;
+        font-size: 32px;
+    }
     .nav {
-        visibility: hidden;
         display: none;
     }
     .nav-toggle {
         display: inline;
+        cursor: pointer;
         grid-column: 2;
         justify-self: end;
     }
