@@ -1,6 +1,5 @@
 package ru.blog.teachersblog.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -34,6 +33,21 @@ public class PostController {
     @PostMapping()
     public String create(@ModelAttribute("post") Post post) {
         postDAO.save(post);
+        return "redirect:/posts";
+    }
+    @GetMapping("/{id}/edit")
+    public String edit(Model model, @PathVariable("id") int id) {
+        model.addAttribute("post", postDAO.show(id));
+        return "posts/edit";
+    }
+    @PatchMapping("/{id}")
+    public String update(@ModelAttribute("post") Post post, @PathVariable("id") int id) {
+        postDAO.update(id, post);
+        return "redirect:/posts";
+    }
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable("id") int id) {
+        postDAO.delete(id);
         return "redirect:/posts";
     }
 }

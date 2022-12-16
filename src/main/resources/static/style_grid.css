@@ -11,7 +11,10 @@ html {
 :root {
     --header-height: 80px;
     --content-top-margin: 100px;
-    --basic-color: #d3c4ff;
+    /*--basic-color: #d3c4ff;
+
+     */
+    --basic-color: #ff9070;
     --color2: #FFCD24;
     --color3: #c0abff;
     --textcolor: whitesmoke;
@@ -23,7 +26,6 @@ body {
     "header header header"
     ". content ."
     "footer footer footer";
-
     margin: 0;
 }
 .header {
@@ -86,9 +88,6 @@ body {
 }
 .nav-item :active {
     color: black;
-}
-.nav-link :hover {
-    transform: scale(1.2);
 }
 .nav-panel {
     width: 320px;
@@ -154,14 +153,15 @@ body {
     min-height: calc(105vh - 2 * var(--header-height));
     margin: 20px;
     grid-area: content;
-    min-width: 120vh;
+    width: 1000px;
     grid-auto-rows: fit-content(100%);
+    justify-content: center;
 }
 .post {
     word-wrap: break-word;
-    position: relative;
     border-bottom: 1px solid black;
-    max-width: 96vw;
+    width: inherit;
+    /*max-width: 96vw;*/
 }
 .footer {
     background-color: var(--basic-color);

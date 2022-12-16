@@ -2,10 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title th:text="${post.getId()}">post</title>
+    <title th:text="${post.getTitle()}">post</title>
 </head>
 <body>
 <p th:text="${post.getTitle()}">text</p>
 <p th:text="${post.getText()}">text</p>
+<a th:href="@{/posts/{id}/edit(id=${post.getId()})}">Редактировать</a>
+<form th:method="DELETE" th:action="@{/posts/{id}(id=${post.getId()})}">
+    <input type="submit" value="Удалить">
+</form>
 </body>
 </html>

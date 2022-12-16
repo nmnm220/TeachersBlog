@@ -1,30 +1,34 @@
 package ru.blog.teachersblog.dao;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import ru.blog.teachersblog.models.Post;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Component
 public class PostDAO {
-    private static int POST_COUNT;
-    private List<Post> posts;
-    {
-        posts = new ArrayList<>();
-        posts.add(new Post(++POST_COUNT, "123 askdjfaesp[aow509a58e6bmu9aw846bmu98mu 98wa6mb9w86m98wbay", "Первый пост!"));
-        posts.add(new Post(++POST_COUNT, "ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss" +
-                "ssssssssssssssssssssssssssssssssssssssssss ssssssssssssssssssssssssssssssssssssssssssssssssssssssssss", "Второй пост!"));
+    private final JdbcTemplate jdbcTemplate;
+    @Autowired
+    public PostDAO(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
     }
 
     public List<Post> index() {
-        return posts;
+        return jdbcTemplate.query("SELECT * from posts", new BeanPropertyRowMapper<>(Post.class));
     }
     public Post show (int id) {
-        return posts.stream().filter(post -> post.getId() == id).findAny().orElse(null);
+        return jdbcTemplate.queryForObject("SELECT * from posts where id=?", new BeanPropertyRowMapper<>(Post.class), id);
     }
     public void save(Post post) {
-        post.setId(++POST_COUNT);
-        posts.add(post);
+        jdbcTemplate.update("insert into posts (title, text) values (?, ?)", post.getTitle(), post.getText());
+    }
+    public void update(int id, Post updatedPost) {
+        jdbcTemplate.update("update posts set title=?, text=? where id=?", updatedPost.getTitle(), updatedPost.getText(), id);
+    }
+    public void delete (int id) {
+        jdbcTemplate.update("delete from posts where id=?", id);
     }
 }
