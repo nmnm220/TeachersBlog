@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import ru.blog.teachersblog.vk.VKInitializer;
 
 import javax.sql.DataSource;
 
@@ -18,7 +19,7 @@ public class TeachersBlogApplication {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.sqlite.JDBC");
-        dataSource.setUrl("jdbc:sqlite:C:/Users/Eliseev/IdeaProjects/TeachersBlog/src/main/resources/posts.db");
+        dataSource.setUrl("jdbc:sqlite:src/main/resources/posts.db");
         return dataSource;
     }
 
