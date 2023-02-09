@@ -10,6 +10,7 @@
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+    <link th:href="@{/IgraSans.otf}" rel="stylesheet">
 </head>
 <body>
 <input th:fragment="nav-checkbox" type="checkbox" id="nav-toggle" hidden="">
@@ -28,13 +29,13 @@
     </ul>
 </nav>
 <header th:fragment="header" class="header">
-    <div class="logo"><a href="/index">Педагогический блог
-        <p>Татьяны Москаленко</p></a></div>
+    <div class="logo"><a href="/index">Татьяна Москаленко</a></div>
     <ul class="nav">
-        <li class="nav-item"><a href="/news" class="nav-link">Новости</a></li>
-        <li class="nav-item"><a href="/photo" class="nav-link">Фото</a></li>
-        <li class="nav-item"><a href="/videos" class="nav-link">Видео</a></li>
-        <li class="nav-item"><a href="/contacts" class="nav-link">Контакты</a></li>
+        <li class="nav-item"><a href="/index" class="nav-link"><img th:src="@{Home.png}" alt="home"></a></li>
+        <li class="nav-item"><a href="/news" class="nav-link">новости</a></li>
+        <li class="nav-item"><a href="/photo" class="nav-link">фото</a></li>
+        <li class="nav-item"><a href="/videos" class="nav-link">видео</a></li>
+        <li class="nav-item"><a href="/contacts" class="nav-link">контакты</a></li>
 
     </ul>
     <label for="nav-toggle" class="nav-toggle" onclick=""></label>
