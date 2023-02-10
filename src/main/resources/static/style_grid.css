@@ -2,21 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
-
-@font-face {
-    font-family: 'IgraSans';
-url('fonts/IgraSans.otf');
-}
-
-@font-face {
-    font-family: 'Raleway';
-url('fonts/Raleway-Regular.ttf');
-}
-
-@font-face {
-    font-family: 'Raleway-Bold';
-url('fonts/Raleway-Bold.ttf');
-}
+@import url('style_fonts.css');
 
 html {
     overflow-y: scroll;
@@ -33,7 +19,7 @@ html {
     --color2: #EAC91D;
     --color3: #c0abff;
     --textcolor: black;
-    font-family: 'Raleway', serif;
+    font-family: 'ralewayregular', serif;
 }
 
 body {
@@ -52,22 +38,19 @@ body {
     padding: 0;
     background-color: var(--basic-color);
     box-shadow: 0 0 5px #494949;
-    grid-row: 1;
     position: sticky;
     grid-area: header;
-    grid-template-columns: 0.7fr 1fr 1fr 0.7fr;
     justify-items: center;
     align-items: center;
 }
 
 .logo {
-    grid-column: 2;
+    grid-column: 1 / -1;
     grid-row: 1;
     margin-left: 20px;
-    font-family: 'IgraSans', cursive;
+    font-family: 'igra_sansregular', sans-serif;
     font-size: 28px;
     justify-self: start;
-    white-space: nowrap;
 }
 
 .logo a {
@@ -75,42 +58,13 @@ body {
     text-decoration: none;
 }
 
-h1 {
-    font-size: 32px;
-    font-family: 'IgraSans', sans-serif;
-}
-.highlighted {
-    color: var(--basic-color);
-    font-family: 'Raleway-Bold', sans-serif;
-}
-
-.yellow-border {
-    padding: 10px;
-    border-style: solid;
-    border-color: var(--color2);
-}
-
-.person-img {
-    grid-row: 2;
-    float: right;
-    display: block;
-    width: 180px;
-    margin-bottom: 20px;
-    border-width: 3px;
-    border-style: solid;
-    border-color: var(--basic-color);
-    border-bottom-right-radius: 20%;
-    border-top-right-radius: 20%;
-    border-top-left-radius: 20%;
-}
-
 .nav {
-    grid-column: 3;
+    grid-column: 2;
     grid-row: 1;
     visibility: visible;
     display: grid;
     grid-auto-flow: column;
-    margin: 0;
+    margin: 0 20px 0 0;
     justify-self: end;
     padding: 0;
     list-style-type: none;
@@ -121,13 +75,20 @@ h1 {
     user-select: none;
     outline: none;
     text-align-all: center;
-    margin: 20px 7px 20px 7px;
+    margin: 20px 10px 20px 10px;
     justify-self: center;
+    align-self: center;
 }
 
 .nav-item img {
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
+    margin: 5px 0 0 0;
+    padding: 0;
+    transition: 500ms;
+}
+.nav-item img:hover {
+    opacity: 0.7;
 }
 
 .nav-link {
@@ -135,7 +96,7 @@ h1 {
     color: var(--textcolor);
     font-size: 24px;
     transition: 500ms;
-    font-family: 'IgraSans', cursive;
+    font-family: 'igra_sansregular', cursive;
 }
 
 .nav-item :hover {
@@ -187,13 +148,88 @@ h1 {
     margin-left: 50px;
     font-size: 24px;
     color: whitesmoke;
-    font-family: 'Poiret One', cursive;
+    font-family: 'igra_sansregular', cursive;
     text-decoration: none;
 }
 
 .nav-checkbox {
     position: absolute;
     display: none;
+}
+
+.greeting-grid {
+    grid-auto-flow: column;
+    display: grid;
+}
+.greeting-grid img {
+    grid-row: 1;
+    grid-column: 2;
+    width: 300px;
+    margin: 20px 0 0 20px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: var(--basic-color);
+    border-bottom-right-radius: 20%;
+    border-top-right-radius: 20%;
+    border-top-left-radius: 20%;
+}
+h1 {
+    font-size: 32px;
+    font-family: 'igra_sansregular', sans-serif;
+}
+.highlighted {
+    color: var(--basic-color);
+    font-family: 'ralewaybold', sans-serif;
+}
+
+.yellow-border {
+    padding: 10px;
+    border-style: solid;
+    border-color: var(--color2);
+    width: fit-content;
+}
+.job-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.job-list p {
+    font-family: ralewaybold, sans-serif;
+}
+.job-list div {
+    border: 3px solid var(--basic-color);
+    border-radius: 40px 40px 40px 0;
+    padding: 30px 10px 30px 30px;
+    margin: 20px;
+}
+.job-list ul {
+    margin: 0 0 10px 0;
+    padding: 10px;
+}
+
+.education li {
+    margin: 20px 0 20px 0;
+}
+.awards .grid {
+    display: grid;
+    grid-template-columns: fit-content(100%) 200px fit-content(100%);
+    align-items: center;
+}
+.awards .year {
+    grid-column: 1;
+    font-family: ralewaybold, sans-serif;
+    color: var(--basic-color);
+    font-size: 24px;
+}
+.awards .line {
+    width: 100px;
+    transform: rotate(90deg);
+    justify-self: center;
+    grid-column: 2;
+}
+.awards .text {
+    grid-column: 3;
+    margin-top: 20px;
 }
 
 [id='nav-toggle'] {
@@ -218,15 +254,18 @@ h1 {
     min-height: calc(105vh - 2 * var(--header-height));
     margin: 20px;
     grid-area: content;
-    width: 1000px;
+    width: 90%;
     grid-auto-rows: fit-content(100%);
     justify-content: center;
+    align-self: center;
+    justify-self: center;
 }
 
 .post {
     word-wrap: break-word;
     border-bottom: 1px solid black;
     width: inherit;
+    justify-self: center;
     /*max-width: 96vw;*/
 }
 
@@ -311,9 +350,5 @@ h1 {
     .footer-social {
         grid-column: 2;
         justify-self: center;
-    }
-
-    .content {
-
     }
 }

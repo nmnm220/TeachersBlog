@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head th:insert="~{fragments/template :: head}">
+</head>
+<body>
+<th:block th:insert="~{fragments/template :: nav-checkbox}"></th:block>
+<th:block th:insert="~{fragments/template :: nav}"></th:block>
+<th:block th:insert="~{fragments/template :: header}" class="sticky"> </th:block>
+<div class="content">
+<div>Веселые старты</div>
+</div>
+<th:block th:insert="~{fragments/template :: footer}" class="footer"></th:block>
+</body>
+</html>

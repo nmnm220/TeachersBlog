@@ -5,12 +5,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class PhotoController {
+public class ParentsController {
 
-    @GetMapping("/photo")
+    @GetMapping("/parents")
     public String contacts(Model model) {
-        model.addAttribute("title", "Фото");
-        return "photo";
+        model.addAttribute("title", "Для Вас, коллеги");
+        return "parents";
     }
 
 }
